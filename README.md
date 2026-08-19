@@ -95,6 +95,7 @@ A full-stack Point of Sale (POS) Invoice Service built with Node.js, Express, Po
 The application supports product and customer management, product search and pagination, invoice creation, GST and discount calculations, stock validation, transaction-safe invoice creation, concurrent overselling protection, invoice lookup, and printable invoices.
 
 ---
+```
 
 4. Database Schema
 
@@ -134,18 +135,18 @@ Do not commit .env to GitHub.
 
 Clone the repository and enter the project directory:
 
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd POS-Invoice-Service
+      git clone <YOUR_GITHUB_REPOSITORY_URL>
+      cd POS-Invoice-Service
 
 Install backend dependencies:
 
-npm install
+   npm install
 
 Install frontend dependencies:
 
-cd frontend
-npm install
-cd ..
+      cd frontend
+      npm install
+      cd ..
 
 7. Database Setup
 
@@ -155,15 +156,15 @@ Configure the DATABASE_URL in .env.
 
 Run Prisma migrations:
 
-npx prisma migrate dev
+      npx prisma migrate dev
 
 Generate the Prisma client:
 
-npx prisma generate
+      npx prisma generate
 
 Seed the database:
 
-node seed.js
+      node seed.js
 
 The seed creates the sample products and customers required for the application and acceptance testing.
 
@@ -173,7 +174,7 @@ The seed includes more than 50 products and 5 customers, including active, inact
 
 A database connectivity check is available:
 
-node test-db.js
+      node test-db.js
 
 Successful output:
 
@@ -185,78 +186,79 @@ If the connection fails, the command exits with a non-zero status.
 
 From the project root:
 
-npm start
+      npm start
 
 The backend runs on:
 
-http://localhost:3000
+      http://localhost:3000
 
 Health check:
 
 GET /health
 
 Expected response:
-
 {
   "status": "ok",
   "message": "POS Invoice Service is running"
 }
+
 10. Start the Frontend
 
 Open another terminal:
 
-cd frontend
-npm run dev
+      cd frontend
+      npm run dev
 
 Vite normally provides the frontend at:
 
-http://localhost:5173
+      http://localhost:5173
+      
 11. Frontend Features
 Products
 
 The frontend supports:
 
-View products
-Product pagination
-Search by product name
-Partial-name search
-Search by SKU
-Search by barcode
-Case-insensitive search
-Clear search
-Display product price
-Display GST rate
-Display stock
-Display active/inactive status
-Customers
+   View products
+   Product pagination
+   Search by product name
+   Partial-name search
+   Search by SKU
+   Search by barcode
+   Case-insensitive search
+   Clear search
+   Display product price
+   Display GST rate
+   Display stock
+   Display active/inactive status
+   Customers
 
 The frontend supports:
 
-View customers
-Select a customer during invoice creation
-Create Invoice
+   View customers
+   Select a customer during invoice creation
+   Create Invoice
 
 The invoice workflow supports:
 
-Select customer
-Select active products
-Add products to cart
-Adjust quantities
-Remove products
-Apply discount
-Preview invoice
-Confirm and create invoice
-Invoice Preview
+   Select customer
+   Select active products
+   Add products to cart
+   Adjust quantities
+   Remove products
+   Apply discount
+   Preview invoice
+   Confirm and create invoice
+   Invoice Preview
 
 Before creating an invoice, the user can review:
 
-Customer
-Customer phone number
-Products
-Quantities
-Unit prices
-Subtotal
-Discount
+   Customer
+   Customer phone number
+   Products
+   Quantities
+   Unit prices
+   Subtotal
+   Discount
 
 GST and the final total are calculated authoritatively by the backend when the invoice is created.
 
@@ -264,30 +266,30 @@ Invoice Details
 
 After successful invoice creation, the application displays:
 
-Invoice number
-Date/time
-Customer
-Customer phone number
-Products
-Quantities
-Unit prices
-GST
-Discount
-Subtotal
-Grand total
-Invoice Lookup
+   Invoice number
+   Date/time
+   Customer
+   Customer phone number
+   Products
+   Quantities
+   Unit prices
+   GST
+   Discount
+   Subtotal
+   Grand total
+   Invoice Lookup
 
 Invoices can be looked up using the ending digits of the invoice number.
 
 Example invoice:
 
-INV-20260819-0016
+   INV-20260819-0016
 
 The user can enter:
 
-0016
+   0016
 
-to retrieve the corresponding invoice.
+   to retrieve the corresponding invoice.
 
 Printable Receipt
 
@@ -295,45 +297,45 @@ The created invoice can be printed directly using the browser's print functional
 
 The printable receipt contains:
 
-Shop name
-Invoice number
-Date/time
-Customer details
-Invoice items
-Quantity
-Unit price
-GST
-Discount
-Subtotal
-Grand total
+   Shop name
+   Invoice number
+   Date/time
+   Customer details
+   Invoice items
+   Quantity
+   Unit price
+   GST
+   Discount
+   Subtotal
+   Grand total
 
 The browser's window.print() functionality is used instead of adding a PDF-generation dependency.
 
 12. API Endpoints
-Health
-GET /health
-Products
-GET /products
+   Health
+   GET /health
+   Products
+   GET /products
 
 Pagination example:
 
-GET /products?page=1&pageSize=10
-Product Search
-GET /products/search?q=milk
+   GET /products?page=1&pageSize=10
+   Product Search
+   GET /products/search?q=milk
 
 Search supports:
 
-Product name
-SKU
-Barcode
-Partial matching
-Case-insensitive matching
-Create Product
-POST /products
-Customers
-GET /customers
-Create Invoice
-POST /invoices
+   Product name
+   SKU
+   Barcode
+   Partial matching
+   Case-insensitive matching
+   Create Product
+   POST /products
+   Customers
+   GET /customers
+   Create Invoice
+   POST /invoices
 
 Example request:
 
