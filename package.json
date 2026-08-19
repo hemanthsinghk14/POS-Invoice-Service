@@ -1,0 +1,35 @@
+{
+  "name": "pos-invoice-service",
+  "version": "1.0.0",
+  "description": "Full-stack POS Invoice Service with Express, Prisma, PostgreSQL and React",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node tests/run-tests.js"
+  },
+  "keywords": [
+    "pos",
+    "invoice",
+    "express",
+    "prisma",
+    "postgresql",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^6.19.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "pg": "^8.23.0",
+    "prisma": "^6.19.3",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "dotenv": "^17.4.2"
+  }
+}
